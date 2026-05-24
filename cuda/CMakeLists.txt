@@ -1,4 +1,4 @@
-add_library(cuda_kernels
+add_library(cuda_kernels STATIC
     kernels.cu
 )
 
@@ -8,4 +8,5 @@ target_include_directories(cuda_kernels PUBLIC
 
 set_target_properties(cuda_kernels PROPERTIES
     CUDA_SEPARABLE_COMPILATION ON
+    CUDA_RESOLVE_DEVICE_SYMBOLS ON
 )
